@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'pythonbelt/css/style.css' %}">
+    <meta charset="utf-8">
+    <title>Python Belt</title>
+  </head>
+  <body>
+    <div id=container>
+      <div id="popup">
+      <p id="pop">{{message}}</p>
+      </div>
+      <div class="formbox">
+        <h2>Login</h2>
+        <form action="/login" method="post">
+          {% csrf_token %}
+          <input type="text" name="username" placeholder="Username">
+          <input type="password" name="password" placeholder="password">
+          <input type="submit" value="Login">
+        </form>
+      </div>
+      <div class="formbox">
+        <h2>Register</h2>
+        <form action="/register" method="post">
+          {% csrf_token %}
+          <input type="hidden" name="created_at" />
+          <input type="hidden" name="updated_at" />
+          <label for="first_name">First Name </label>
+          <input type="text" name="first_name" placeholder="First Name">
+          <label for="last_name">Last Name </label>
+          <input type="text" name="last_name" placeholder="Last Name">
+          <label for="username">Username </label>
+          <input type="text" name="username" placeholder="Username">
+          <label for="birthday">Birthday </label>
+          {% include 'pythonbelt/birthdate.html' %}
+          <label for="email">Email Address </label>
+          <input type="email" name="email" placeholder="example@example.com">
+          <label for="email">Password </label>
+          <input type="password" name="password" placeholder="••••••••">
+          <label for="email">Verify Password </label>
+          <input type="password" name="verify_password" placeholder="••••••••">
+          <label for="date_hired">Date Hired: </label>
+          <input type="date" name="date_hired">
+          <input type="submit" value="Register">
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

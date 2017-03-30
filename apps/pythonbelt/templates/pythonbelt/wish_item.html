@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'pythonbelt/css/style.css' %}">
+    <meta charset="utf-8">
+    <title>{{item.item}}</title>
+  </head>
+  <body>
+    <div id="container">
+      {% include 'pythonbelt/navbar.html' %}
+      <h2>{{item.item}}</h2>
+      <h2>Users who added this under their wish list:</h2>
+      <h3>{{creator.first_name}}</h3>
+      {% for wisher in co_wishers %}
+      <h3>{{wisher.first_name}}</h3>
+      {% endfor %}
+    </div>
+  </body>
+</html>

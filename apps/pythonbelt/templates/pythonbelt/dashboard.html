@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'pythonbelt/css/style.css' %}">
+    <meta charset="utf-8">
+    <title>My Wish List</title>
+  </head>
+  <body>
+    <div id="container">
+      {% include 'pythonbelt/navbar.html' %}
+      <h2>Hello, {{user.first_name}}</h2>
+      <div>
+        <h3>Your Wish List:</h3>
+        <table>
+          <tr>
+            <th>Item</th>
+            <th>Added by</th>
+            <th>Date Added</th>
+            <th>Action</th>
+          </tr>
+          {% for item in user_wish_items %}
+          <tr>
+            <td><a href="wish_items/{{item.id}}">{{item.item}}</a></td>
+            <td>You</td>
+            <td>{{item.created_at}}</td>
+            <td><a href="delete_item/{{item.id}}">Delete</a></td>
+          </tr>
+          {% endfor %}
+          {% for item in co_wish_items %}
+          <tr>
+            <td><a href="wish_items/{{item.id}}">{{item.item}}</a></td>
+            <td>{{item.creator.first_name}}</td>
+            <td>{{item.created_at}}</td>
+            <td><a href="remove_item/{{item.id}}">Remove from my Wishlist</a></td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+      <div>
+        <h3>Other Users' Wish List</h3>
+        <table>
+          <tr>
+            <th>Item</th>
+            <th>Added by</th>
+            <th>Date Added</th>
+            <th>Action</th>
+          </tr>
+          {% for item in other_wish_items %}
+          <tr>
+            <td><a href="wish_items/{{item.id}}">{{item.item}}</a></td>
+            <td>{{item.creator.first_name}}</td>
+            <td>{{item.created_at}}</td>
+            <td><a href="add_item/{{item.id}}">Add to my Wishlist</a></td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+      <div  id="bottom">
+        <p><a href="{% url 'add_new_item' %}">Add Item</a></p>
+        {% for error in request.session.errors %}
+        {{error}}<br>
+        {% endfor %}
+      </div>
+    </div>
+  </body>
+</html>

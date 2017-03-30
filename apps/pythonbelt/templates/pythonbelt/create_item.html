@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'pythonbelt/css/style.css' %}">
+    <meta charset="utf-8">
+    <title>Create Item</title>
+  </head>
+  <body>
+    <div id="container">
+      {% include 'pythonbelt/navbar.html' %}
+      <h2>Create a New Wish List Item</h2>
+      <form action="/create_item" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="id" value={{request.session.id}}>
+        <label for="wish_item">Item/Product: </label>
+        <input type="text" name="wish_item" >
+        <input type="submit" value="Add">
+      </form>
+    </div>
+  </body>
+</html>

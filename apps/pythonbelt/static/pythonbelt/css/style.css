@@ -1,0 +1,160 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Helvetica", arial, sans-serif;
+}
+
+div#container {
+  background-color: white;
+  padding: 10px;
+}
+
+h2 {
+  margin: 50px 0px 30px 0px;
+}
+
+.formbox {
+  margin-bottom: 50px;
+  position: relative;
+  left: 15%;
+}
+
+form {
+  font-size: 14px;
+  position: relative;
+}
+
+label {
+  display: block;
+}
+
+div {
+  margin-bottom: 30px
+}
+
+input[type=text] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=email] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=password] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+select {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 12px;
+    appearance: none;
+    color: #95a5a6;
+    font: arial;
+    font-size: 14px;
+    background:#ecf0f1;
+    visibility: visible;
+}
+
+input[type=submit] {
+    width: 15%;
+    background-color: #45a049;
+    color: white;
+    padding: 12px 20px;
+    margin: 8px 0 8px 15%;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+}
+input[type=submit]:hover {
+    background-color: green;
+}
+
+input[type=date] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 12px;
+    appearance: none;
+    color: #95a5a6;
+    font: arial;
+    font-size: 14px;
+    background:#ecf0f1;
+    visibility: visible;
+}
+
+div#popup {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    width: 500px;
+    height: 100px;
+    font-weight: bold;
+    color: white;
+ }
+
+ nav {
+   background-color: grey;
+   padding: 10px;
+   background-color: rgb(90, 95, 100);
+ }
+ .nav {
+   display: inline-block;
+   text-decoration: none;
+   margin-right: 20px
+ }
+
+div#bottom {
+  margin: 20px;
+  float: right;
+}
+
+table {
+    width: 80%;
+    border: 1px solid black;
+
+}
+
+th {
+    height: 50px;
+    border-right: 1px solid black;
+    border-top: 1px solid black
+}
+tr {
+    height: 50px;
+    border: 1px solid black;
+}
+td {
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+    height: 20px;
+    vertical-align: bottom;
+    padding: 5px;
+}
